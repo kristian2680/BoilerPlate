@@ -7,29 +7,14 @@ namespace Lecture01
         public static void Main(string[] args)
         {
             Program program = new Program();
-            //Console.WriteLine("Hello World!");
-            Console.WriteLine(program.IsLeapYear(400));
-            //Console.WriteLine(program.IsLeapYear(1700));
-            //Console.WriteLine(program.IsLeapYear(1600));
-        }
+            int input = int.Parse(Console.ReadLine());
 
-        public bool LeapYear2 (int year){
-            if(year%4==0){
-                return true;
+            if(program.IsLeapYear(input)==true){
+                Console.WriteLine("yay");
             }
             else{
-                return false;
+                Console.WriteLine("nay");
             }
-        }
-
-        public bool IsLeapYear3 (int year){
-            if (year%4 == 0){
-                if (year%100==0){
-                    return false;
-                }
-                return true;
-            }
-            return false;
         }
 
         public bool IsLeapYear (int year){
@@ -41,13 +26,10 @@ namespace Lecture01
                     else {
                         return false;
                     }
-                    }
-                    return true;
                 }
+                return true;
+            }
             return false;
         }
-
-        
-
     }
 }

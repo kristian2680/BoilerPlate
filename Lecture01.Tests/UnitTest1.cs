@@ -8,21 +8,21 @@ namespace Lecture01.Tests
     {
 
         [Fact]
-        public void Test_LeapYear2_with_4_returns_true(){
+        public void Test_IsLeapYear_with_4_returns_true(){
             //arrange
             var expected = true;
             //act
-            var actual = new Program().LeapYear2(4);
+            var actual = new Program().IsLeapYear(4);
             //assert
             Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void Test_IsLeapYear3_False_IfExactlyDivisibleBy100(){
+        public void Test_IsLeapYear_False_IfExactlyDivisibleBy100(){
             //arrange
             var expected =false;
             //act
-            var actual = new Program().IsLeapYear3(1700);
+            var actual = new Program().IsLeapYear(1700);
             //Assert
             Assert.Equal(expected, actual);
         }
