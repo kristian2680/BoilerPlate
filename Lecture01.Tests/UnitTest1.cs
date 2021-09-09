@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Lecture01;
+using System.IO;
 
 namespace Lecture01.Tests
 {
@@ -12,7 +13,7 @@ namespace Lecture01.Tests
             //arrange
             var expected = true;
             //act
-            var actual = new Program().IsLeapYear(4);
+            var actual = new Program().IsLeapYear(1600);
             //assert
             Assert.Equal(expected, actual);
         }
@@ -32,11 +33,20 @@ namespace Lecture01.Tests
             //arrange
             var expected =true;
             //act
-            var actual = new Program().IsLeapYear(1600);
+            var actual = new Program().IsLeapYear(2000);
             //Assert
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void Test_ThrowException_If_lessThan_1582(){
+            Assert.Throws<Exception>(() => new Program().IsLeapYear(1580));
+        }
 
+        [Fact]
+        public void Test_ThrowException_If_User_inputs_something_that_insnt_an_int(){
+            Console.SetIn(new StringReader("Hej"));
+            Assert.Throws<Exception>(() => Program.Main(new string [0]));
+        }
     }
 }
